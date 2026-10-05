@@ -8,13 +8,25 @@
 </head>
 <body>
 
+    <!-- Fondo dinámico animado -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+    <!-- Lienzo de confeti para la victoria -->
+    <canvas id="confetti-canvas"></canvas>
+
     <div id="game-container">
-        <!-- PANTALLA DE INICIO -->
+        <!-- PANTALLA DE INICIO (INTRO EXPANDIDA) -->
         <div id="intro" class="screen active">
+            <div class="alert-badge">⚠️ ALERTA DE SEGURIDAD CRÍTICA</div>
             <h1>🔒 LABORATORIO SECTOR 7</h1>
-            <p>Las 10 puertas del nivel máximo de seguridad se han sellado.</p>
-            <p>Para escapar, deberás analizar el <b>comportamiento de funciones</b> y encontrar las contraseñas numéricas de cada esclusa.</p>
-            <button class="btn-start" onclick="iniciarJuego()">INICIAR ESCAPE</button>
+            <p class="intro-desc">
+                Bienvenido, ingeniero. El núcleo del laboratorio ha entrado en fallo crítico y las <b>10 puertas de aislamiento espacial</b> se han bloqueado automáticamente.
+            </p>
+            <p class="intro-desc">
+                Para desbloquear el complejo y escapar, deberás ingresar los códigos numéricos analizando el <b>comportamiento de funciones</b>, sus derivadas, aproximaciones y límites en cada sector.
+            </p>
+            <button class="btn-start" onclick="iniciarJuego()">INICIAR PROTOCOLO DE ESCAPE</button>
         </div>
 
         <!-- PUERTA 1 -->
@@ -170,11 +182,15 @@
             </div>
         </div>
 
-        <!-- PANTALLA FINAL -->
+        <!-- PANTALLA FINAL DE CELEBRACIÓN -->
         <div id="final" class="screen">
-            <h1>🔓 ¡HAS ESCAPADO!</h1>
-            <p>Lograste salir del laboratorio superando las 10 puertas de seguridad.</p>
-            <p>Dominaste el análisis local y global de las funciones. ¡El cuarto de escape ha sido superado!</p>
+            <div class="victory-icon">🏆</div>
+            <h1 class="victory-title">🎉 ¡SISTEMA RESTABLECIDO! 🎉</h1>
+            <h2>¡HAS ESCAPADO CON ÉXITO!</h2>
+            <p class="intro-desc">
+                Lograste abrir las 10 puertas del laboratorio aplicando correctamente las aproximaciones, derivadas, concavidades y comportamientos asintóticos.
+            </p>
+            <p class="victory-badge">MISIÓN CUMPLIDA • SECTOR 7 A SALVO</p>
         </div>
 
         <!-- VENTANA POP-UP -->
