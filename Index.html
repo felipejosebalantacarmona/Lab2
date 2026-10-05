@@ -8,24 +8,23 @@
 </head>
 <body>
 
-    <!-- Fondo dinámico animado -->
-    <div class="bg-grid"></div>
-    <div class="bg-glow"></div>
+    <!-- Fondo Animado Espacial / Matemático -->
+    <div class="math-grid"></div>
+    <div class="stars"></div>
 
-    <!-- Lienzo de confeti para la victoria -->
+    <!-- Canvas para la Celebración Final -->
     <canvas id="confetti-canvas"></canvas>
 
     <div id="game-container">
-        <!-- PANTALLA DE INICIO (INTRO EXPANDIDA) -->
+        <!-- PANTALLA DE INICIO / INTRODUCCIÓN -->
         <div id="intro" class="screen active">
-            <div class="alert-badge">⚠️ ALERTA DE SEGURIDAD CRÍTICA</div>
-            <h1>🔒 LABORATORIO SECTOR 7</h1>
-            <p class="intro-desc">
-                Bienvenido, ingeniero. El núcleo del laboratorio ha entrado en fallo crítico y las <b>10 puertas de aislamiento espacial</b> se han bloqueado automáticamente.
-            </p>
-            <p class="intro-desc">
-                Para desbloquear el complejo y escapar, deberás ingresar los códigos numéricos analizando el <b>comportamiento de funciones</b>, sus derivadas, aproximaciones y límites en cada sector.
-            </p>
+            <h1>🚨 ALERTA: SECTOR 7 SELLADO</h1>
+            <div class="story-box">
+                <p><strong>AÑO 2026 — ESTACIÓN DE INVESTIGACIÓN MATH-CORP</strong></p>
+                <p>Ha ocurrido una falla crítica en el núcleo del reactor principal. El protocolo de contingencia ha bloqueado las 10 puertas blindadas del laboratorio.</p>
+                <p>La única forma de desbloquear las esclusas y salvar a la estación es ingresando los códigos de seguridad obtenidos mediante el análisis del <strong>Comportamiento Funcional y Aproximación Matemática</strong>.</p>
+                <p><em>¿Tienes el conocimiento necesario para analizar los datos, resolver los 10 sectores y escapar con vida?</em></p>
+            </div>
             <button class="btn-start" onclick="iniciarJuego()">INICIAR PROTOCOLO DE ESCAPE</button>
         </div>
 
@@ -154,15 +153,15 @@
         <div id="nivel9" class="screen">
             <h2>PUERTA 9: Cámara de Vacío</h2>
             <h3>Tema: Límite Exponencial</h3>
-            <button class="btn-theory" onclick="mostrarTeoria('El término e^(-t) se vuelve CERO cuando el tiempo t se hace muy grande (infinito).')">📄 Leer Archivo: Exponenciales</button>
+            <button class="btn-theory" onclick="mostrarTeoria(&#39;El término e^(-t) se vuelve CERO cuando el tiempo t se hace muy grande (infinito).&#39;)">📄 Leer Archivo: Exponenciales</button>
             <div class="puzzle-box">
                 <p>La energía E(t) se comporta así a lo largo del tiempo:</p>
                 <p class="math-func">E(t) = 500 - 300(e⁻ᵗ)</p>
                 <p>Si esperamos muchísimo tiempo (t → ∞), ¿En qué valor se estabilizará?</p>
                 <input type="number" id="input9" placeholder="Ingresa E">
                 <br>
-                <button class="btn-verify" onclick="verificar(9, '500', 'nivel10')">DESBLOQUEAR Y AVANZAR</button>
-                <button class="btn-hint" onclick="mostrarPista('Pista: Si e^(-t) se vuelve 0 en el infinito, toda la parte de 300(0) desaparece.')">💡 Pista</button>
+                <button class="btn-verify" onclick="verificar(9, &#39;500&#39;, &#39;nivel10&#39;)">DESBLOQUEAR Y AVANZAR</button>
+                <button class="btn-hint" onclick="mostrarPista(&#39;Pista: Si e^(-t) se vuelve 0 en el infinito, toda la parte de 300(0) desaparece.&#39;)">💡 Pista</button>
             </div>
         </div>
 
@@ -170,27 +169,27 @@
         <div id="nivel10" class="screen">
             <h2>PUERTA 10: Sobrecarga del Núcleo</h2>
             <h3>Tema: La Prueba Final</h3>
-            <button class="btn-theory" onclick="mostrarTeoria('El comportamiento completo requiere encontrar puntos críticos y evaluar la función en ellos. Esta es la prueba final.')">📄 Leer Archivo: Síntesis Global</button>
+            <button class="btn-theory" onclick="mostrarTeoria(&#39;El comportamiento completo requiere encontrar puntos críticos y evaluar la función en ellos. Esta es la prueba final.&#39;)">📄 Leer Archivo: Síntesis Global</button>
             <div class="puzzle-box">
                 <p>La estabilidad F(x) está dada por:</p>
                 <p class="math-func">F(x) = 2x³ - 6x</p>
                 <p>1. Encuentra la x del MÍNIMO local (cuando x es positivo).<br>2. Evalúa esa x en la función F(x). ¿Cuál es el valor final?</p>
                 <input type="number" id="input10" placeholder="Ingresa valor">
                 <br>
-                <button class="btn-verify" onclick="verificar(10, '-4', 'final')">ABRIR SALIDA FINAL</button>
-                <button class="btn-hint" onclick="mostrarPista('Pista: Derivada = 6x² - 6 = 0. Despeja x (toma x=1). Ahora mete x=1 en la ecuación F(x).')">💡 Pista</button>
+                <button class="btn-verify" onclick="verificar(10, &#39;-4&#39;, &#39;final&#39;)">ABRIR SALIDA FINAL</button>
+                <button class="btn-hint" onclick="mostrarPista(&#39;Pista: Derivada = 6x² - 6 = 0. Despeja x (toma x=1). Ahora mete x=1 en la ecuación F(x).&#39;)">💡 Pista</button>
             </div>
         </div>
 
-        <!-- PANTALLA FINAL DE CELEBRACIÓN -->
+        <!-- PANTALLA FINAL (CELEBRACIÓN) -->
         <div id="final" class="screen">
-            <div class="victory-icon">🏆</div>
-            <h1 class="victory-title">🎉 ¡SISTEMA RESTABLECIDO! 🎉</h1>
-            <h2>¡HAS ESCAPADO CON ÉXITO!</h2>
-            <p class="intro-desc">
-                Lograste abrir las 10 puertas del laboratorio aplicando correctamente las aproximaciones, derivadas, concavidades y comportamientos asintóticos.
-            </p>
-            <p class="victory-badge">MISIÓN CUMPLIDA • SECTOR 7 A SALVO</p>
+            <h1 class="victory-title">🎉 ¡MISIÓN CUMPLIDA! 🎉</h1>
+            <div class="story-box success-box">
+                <p><strong>SISTEMA RESTAURADO — ESTACIÓN A SALVO</strong></p>
+                <p>Has desbloqueado exitosamente las 10 puertas del laboratorio aplicando el cálculo diferencial.</p>
+                <p>Demostraste un dominio total sobre el <em>Comportamiento Local, Aproximación Lineal, Concavidad y Asíntotas</em>.</p>
+            </div>
+            <button class="btn-start" onclick="location.reload()">REINICIAR ESCAPE ROOM</button>
         </div>
 
         <!-- VENTANA POP-UP -->
